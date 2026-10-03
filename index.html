@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Java 2D Array Operations</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 25px;
+        }
+
+        .matrix {
+            display: inline-block;
+            background: #eef3ff;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 10px;
+            line-height: 2;
+            text-align: center;
+        }
+
+        pre {
+            background: #222;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        .output {
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Java 2D Array Operations</h1>
+
+    <p>
+        This project demonstrates matrix operations using
+        two-dimensional arrays in Java.
+    </p>
+
+    <h2>Matrix A</h2>
+
+    <div class="matrix">
+        8 &nbsp;&nbsp; 6<br>
+        4 &nbsp;&nbsp; 2
+    </div>
+
+    <h2>Matrix B</h2>
+
+    <div class="matrix">
+        4 &nbsp;&nbsp; 2<br>
+        2 &nbsp;&nbsp; 1
+    </div>
+
+    <h2>Operations Covered</h2>
+
+    <ul>
+        <li>Matrix Addition</li>
+        <li>Matrix Subtraction</li>
+        <li>Matrix Multiplication</li>
+        <li>Element-wise Division</li>
+        <li>Two-Dimensional Array Traversal</li>
+        <li>Nested Loops</li>
+    </ul>
+
+    <h2>Java Code</h2>
+
+    <pre>
+public class Main {
+
+    public static void main(String[] args) {
+
+        int[][] A = {
+            {8, 6},
+            {4, 2}
+        };
+
+        int[][] B = {
+            {4, 2},
+            {2, 1}
+        };
+
+        int rows = A.length;
+        int cols = A[0].length;
+
+        int[][] sum = new int[rows][cols];
+        int[][] sub = new int[rows][cols];
+        int[][] mul = new int[rows][cols];
+        double[][] div = new double[rows][cols];
+
+        for (int i = 0; i &lt; rows; i++) {
+
+            for (int j = 0; j &lt; cols; j++) {
+
+                sum[i][j] = A[i][j] + B[i][j];
+
+                sub[i][j] = A[i][j] - B[i][j];
+
+                div[i][j] =
+                    (double) A[i][j] / B[i][j];
+            }
+        }
+
+        for (int i = 0; i &lt; rows; i++) {
+
+            for (int j = 0; j &lt; cols; j++) {
+
+                for (int k = 0; k &lt; cols; k++) {
+
+                    mul[i][j] +=
+                        A[i][k] * B[k][j];
+                }
+            }
+        }
+    }
+}
+    </pre>
+
+    <h2>Java Program Output</h2>
+
+    <div class="output">
+
+        <h3>Addition (A + B)</h3>
+        <pre>
+12 8
+6 3
+        </pre>
+
+        <h3>Subtraction (A - B)</h3>
+        <pre>
+4 4
+2 1
+        </pre>
+
+        <h3>Multiplication (A × B)</h3>
+        <pre>
+44 22
+20 10
+        </pre>
+
+        <h3>Division (A / B)</h3>
+        <pre>
+2.00 3.00
+2.00 2.00
+        </pre>
+
+    </div>
+
+    <h2>Technologies Used</h2>
+
+    <p><strong>Java | HTML | CSS</strong></p>
+
+    <h2>Learning Outcome</h2>
+
+    <p>
+        Through this project, I practiced Java two-dimensional arrays,
+        nested loops, matrix operations, array traversal, and basic
+        HTML/CSS presentation.
+    </p>
+
+</div>
+
+</body>
+</html>
